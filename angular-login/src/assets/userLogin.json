@@ -1,0 +1,10 @@
+{
+    "response" : {
+        "userName" : "Jon Doe",
+        "authToken" : "XYZ"
+    },
+    "status" : {
+        "success" : true,
+        "error" : false
+    }
+}
