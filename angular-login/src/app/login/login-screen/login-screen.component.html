@@ -1,8 +1,10 @@
 <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()"> 
+    <label>User Name: </label>
     <input type="text" [formControlName]="'userName'"/>
-    <div *ngIf="userName && userName?.valid">
+    <!-- <div *ngIf="userName && userName?.valid">
         Email as Username is Required
-    </div>
+    </div> -->
+    <label>Password: </label>
     <input type="password" [formControlName]="'password'"/>
     <button type="submit" [disabled]="!loginForm.valid">Submit</button>
 

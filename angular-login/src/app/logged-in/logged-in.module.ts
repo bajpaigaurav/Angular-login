@@ -1,3 +1,4 @@
+import { LoggedInRoutingModule } from './logggedin-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoggedInComponentComponent } from './logged-in-component/logged-in-component.component';
@@ -7,6 +8,7 @@ import { LoggedInComponentComponent } from './logged-in-component/logged-in-comp
 @NgModule({
   declarations: [LoggedInComponentComponent],
   imports: [
+    LoggedInRoutingModule,
     CommonModule
   ]
 })

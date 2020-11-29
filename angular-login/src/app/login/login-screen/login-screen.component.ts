@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/login.service';
 
 @Component({
   selector: 'app-login-screen',
@@ -11,7 +13,7 @@ export class LoginScreenComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor( private formBuilder: FormBuilder) {
+  constructor( private formBuilder: FormBuilder, private loginService: LoginService, private router: Router) {
 
     this.loginForm = this.formBuilder.group(
       {
@@ -31,6 +33,10 @@ export class LoginScreenComponent implements OnInit {
 
     if(this.loginForm.valid) {
       console.log('Good to submit!');
+      this.loginService.loginUser().subscribe( response => {
+        //console.log(response);
+        this.router.navigate(['/loggedin']);
+      })
     } else {
       console.log('something is missing!');
 
